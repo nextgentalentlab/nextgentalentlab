@@ -1,6 +1,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #fdfdfd;
+  background: #fdfdfd url('chatgpt-image.png') no-repeat center center fixed;
+  background-size: 300px;
   margin: 0;
   padding: 0;
 }
