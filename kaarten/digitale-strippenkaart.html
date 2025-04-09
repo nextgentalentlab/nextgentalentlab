@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strippenkaart - Jesse Spits</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    .strippenkaart {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+    .strip {
+      padding: 1.5rem;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .strip.afgevinkt {
+      background: #d1ffd1;
+      border-color: #28a745;
+    }
+    .datum {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Strippenkaart - Jesse Spits</h1>
+  <p>Voer toegangscode in om strippen af te vinken:</p>
+  <input type="password" id="codeInput" placeholder="Pincode (4 cijfers)" maxlength="4">
+  <button onclick="checkCode()">Bevestigen</button>
+  <div class="strippenkaart" id="kaart"></div>
+  <div id="nieuweKaartSectie" class="hidden">
+    <p>Alle strippen zijn afgevinkt.</p>
+    <p>Voer oudercode in om nieuwe kaart te starten:</p>
+    <input type="password" id="ouderCode" placeholder="Oudercode" maxlength="4">
+    <button onclick="nieuweKaart()">Nieuwe kaart activeren</button>
+  </div>
+
+  <script>
+    const strippenKey = 'strippenkaart_jesse_spits';
+    const playerCode = '0234';
+    const ouderCode = '0945';
+    let toegang = false;
+
+    function checkCode() {
+      const code = document.getElementById('codeInput').value;
+      if (code === playerCode || code === ouderCode) {
+        toegang = true;
+        renderKaart();
+      } else {
+        alert('Onjuiste code');
+      }
+    }
+
+    function renderKaart() {
+      const kaartDiv = document.getElementById('kaart');
+      const nieuweKaartSectie = document.getElementById('nieuweKaartSectie');
+      kaartDiv.innerHTML = '';
+      const strippen = JSON.parse(localStorage.getItem(strippenKey)) || [];
+
+      for (let i = 0; i < 10; i++) {
+        const div = document.createElement('div');
+        div.className = 'strip';
+
+        if (strippen[i]) {
+          div.classList.add('afgevinkt');
+          div.innerHTML = `✔️<div class="datum">${strippen[i]}</div>`;
+        }
+
+        if (toegang && !strippen[i]) {
+          div.onclick = () => {
+            const now = new Date().toLocaleString();
+            
+            if (strippen[i]) {
+              strippen[i] = null;
+            } else {
+              strippen[i] = now;
+            }
+    
+            localStorage.setItem(strippenKey, JSON.stringify(strippen));
+            renderKaart();
+          };
+        }
+
+        kaartDiv.appendChild(div);
+      }
+
+      if (strippen.length === 10 && strippen.every(s => s)) {
+        nieuweKaartSectie.classList.remove('hidden');
+      } else {
+        nieuweKaartSectie.classList.add('hidden');
+      }
+    }
+
+    function nieuweKaart() {
+      const code = document.getElementById('ouderCode').value;
+      if (code === ouderCode) {
+        localStorage.removeItem(strippenKey);
+        renderKaart();
+        alert('Nieuwe kaart geactiveerd!');
+      } else {
+        alert('Oudercode onjuist');
+      }
+    }
+
+    renderKaart();
+  </script>
+</body>
+</html>
