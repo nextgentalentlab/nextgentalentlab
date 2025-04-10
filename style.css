@@ -122,5 +122,40 @@ footer {
   color: #0d47a1;
   font-weight: bold;
   text-decoration: underline;
+}.aanmelden {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
 }
+.aanmelden h2, .aanmelden h3 {
+  color: #0d47a1;
+}
+.aanmeldformulier {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.aanmeldformulier input,
+.aanmeldformulier select,
+.aanmeldformulier textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.aanmeldformulier button {
+  background-color: #0d47a1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.aanmeldformulier button:hover {
+  background-color: #09306d;
+}
+
 
