@@ -156,6 +156,17 @@ footer {
 }
 .aanmeldformulier button:hover {
   background-color: #09306d;
+}.overons {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
+.overons h2, .overons h3 {
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
 
 
