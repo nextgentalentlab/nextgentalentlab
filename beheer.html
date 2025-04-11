@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beheeromgeving</title>
+  <script>
+    const password = prompt("Voer wachtwoord in:");
+    if (password !== "nextgen") {
+      alert("Toegang geweigerd.");
+      window.location.href = "/";
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #fefefe; }
+    h1 { color: #0d47a1; }
+    button { padding: 0.5rem 1rem; margin: 0.5rem; background: #fdd835; border: none; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Welkom beheerder</h1>
+  <p>Selecteer welke speler toegang krijgt tot de app of testtraining.</p>
+
+  <div id="beheerlijst">
+    <p><strong>Voorbeeldnaam: Levi</strong></p>
+    <button onclick="toestaan('Levi')">Toegang verlenen</button>
+    <button onclick="testtraining('Levi')">Testtraining toegang</button>
+  </div>
+
+  <script>
+    function toestaan(naam) {
+      alert(`${naam} toegevoegd aan whitelist (simulatie).`);
+    }
+    function testtraining(naam) {
+      alert(`${naam} toegevoegd als testtraining deelnemer (simulatie).`);
+    }
+  </script>
+</body>
+</html>
