@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App installeren - NextGen Talent Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGen App - Strippenkaart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .app-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      background: #fffbea;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .app-container input, .app-container button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .app-container button {
+      background-color: #0d47a1;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .app-container button:hover {
+      background-color: #09306d;
+    }
+    .strip-count {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .attendees {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    .attendees ul {
+      padding-left: 1rem;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto;
+      height: 60px;
+    }
+    .app-help {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,45 +60,73 @@
       <img src="chatgpt-image.png" alt="NextGen Talent Lab logo" class="logo" />
       <h1>NextGen Talent Lab</h1>
     </div>
-    <p class="quote">"Voetbal is samen plezier maken, omdat we het spel super graag uitoefenen" – Garyl Pinas</p>
   </header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="lidmaatschap.html">Lidmaatschap</a></li>
-      <li><a href="strippenkaart.html">Strippenkaart</a></li>
-      <li><a href="over-ons.html">Over ons</a></li>
-      <li><a href="sponsoren.html">Sponsoren</a></li>
-      <li><a href="aanmelden.html">Aanmelden</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="app.html">App</a></li>
-    </ul>
-  </nav>
+
   <main>
-    <section class="welkom">
-      <h2>Onze app installeren</h2>
-      <p>
-        Wil je eenvoudig bijhouden wanneer je kind komt trainen of zelf snel aanmelden als student? Gebruik dan onze eigen NextGen Talent Lab app. Je hoeft niets te downloaden uit de App Store — je zet de app direct op je startscherm.
-      </p>
-
-      <h3>Stap 1: Open de app in je browser</h3>
-      <p>Ga op je telefoon naar: <br><strong>https://nextgentalentlab.nl/app.html</strong></p>
-
-      <h3>Stap 2: Tik op het deel-icoontje</h3>
-      <p>Onderin je scherm zie je het icoon met een vierkantje en een pijltje omhoog (delen). Tik daarop.</p>
-
-      <h3>Stap 3: Kies "Zet op beginscherm"</h3>
-      <p>Scroll in de lijst naar beneden en tik op: <strong>Zet op beginscherm</strong>. Geef de app een naam, bijvoorbeeld: <em>NextGen App</em>.</p>
-
-      <h3>Stap 4: Klaar!</h3>
-      <p>Je ziet nu een app-icoontje op je thuisscherm, net als bij een gewone app. Tik erop om direct de app te openen en je strippenkaart bij te houden.</p>
-
-      <p>Heb je vragen of lukt het niet? Laat het ons weten via de <a href="contact.html">contactpagina</a>, we helpen je graag!</p>
-    </section>
+    <div class="app-container">
+      <h2>Strippenkaart Aanmelding</h2>
+      <p>Voer je naam in om je aan te melden voor de volgende training:</p>
+      <input type="text" id="playerName" placeholder="Jouw naam" />
+      <button onclick="registerForTraining()">Ik doe mee!</button>
+      <div class="strip-count" id="stripCount"></div>
+      <div class="attendees">
+        <h3>Aangemeld voor vandaag:</h3>
+        <ul id="attendeeList"></ul>
+      </div>
+      <div class="app-help">
+        <p><a href="app-uitleg.html">📱 Hulp nodig met installeren? Bekijk de uitleg hier</a></p>
+      </div>
+    </div>
     <div class="watermerk"></div>
   </main>
+
   <footer>
     <p>&copy; 2025 NextGen Talent Lab</p>
   </footer>
+
+  <script>
+    const strippen = JSON.parse(localStorage.getItem('strips')) || {};
+    const attendees = JSON.parse(localStorage.getItem('attendees')) || [];
+
+    function updateStripCount(name) {
+      const count = strippen[name] || 0;
+      document.getElementById('stripCount').innerText = `${name}: ${count} strippen over`;
+    }
+
+    function renderAttendees() {
+      const list = document.getElementById('attendeeList');
+      list.innerHTML = '';
+      attendees.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        list.appendChild(li);
+      });
+    }
+
+    function registerForTraining() {
+      const name = document.getElementById('playerName').value.trim();
+      if (!name) return alert("Vul je naam in!");
+
+      if (!strippen[name]) {
+        strippen[name] = 5;
+      }
+
+      if (strippen[name] <= 0) {
+        return alert("Je hebt geen strippen meer. Neem contact op met de trainer.");
+      }
+
+      if (!attendees.includes(name)) {
+        attendees.push(name);
+        strippen[name]--;
+        localStorage.setItem('attendees', JSON.stringify(attendees));
+        localStorage.setItem('strips', JSON.stringify(strippen));
+      }
+
+      updateStripCount(name);
+      renderAttendees();
+    }
+
+    renderAttendees();
+  </script>
 </body>
 </html>
