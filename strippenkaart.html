@@ -1,1 +1,164 @@
-<html><body><h1>Strippenkaart</h1></body></html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextGen Talent Lab - Strippenkaart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #002147;
+    }
+    header {
+      background-color: #002147;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .logo-centered {
+      display: block;
+      margin: 0 auto 1rem auto;
+      width: 100px;
+    }
+    .quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #FFD100;
+    }
+    nav {
+      background-color: #FFD100;
+      padding: 0.5rem 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin: 0 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #002147;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+    }
+    .uitleg {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #FFD100;
+      color: #002147;
+    }
+    .watermerk {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      opacity: 0.07;
+      z-index: 0;
+    }
+    .watermerk img {
+      width: 100px;
+      height: auto;
+    }
+    footer {
+      background-color: #002147;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="NextGen Talent Lab logo" class="logo-centered">
+    <h1>NextGen Talent Lab</h1>
+    <p class="quote">"We geloven dat elk kind zijn kans zal grijpen, wanneer de kans wordt aangeboden"</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="strippenkaart.html">Strippenkaart</a></li>
+      <li><a href="aanmelden.html">Aanmelden</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Strippenkaart</h2>
+    <div class="uitleg">
+      <p>Bij NextGen Talent Lab trainen kinderen flexibel met een strippenkaart. Zo betaal je alleen voor de trainingen waar je echt bij bent. Geen vaste contributie, maar een eerlijk systeem dat meebeweegt met jouw agenda én ons doel: elk kind een eerlijke kans om te bewegen.</p>
+      <p>De strippenkaart geeft toegang tot trainingen op basis van het aantal strippen dat je koopt. Hiermee dekken we de kosten voor zaalhuur, materiaal en begeleiding.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Strippenkaart</th>
+          <th>Aantal strippen</th>
+          <th>Prijs</th>
+          <th>Omschrijving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Starter</td>
+          <td>5 trainingen</td>
+          <td>€35</td>
+          <td>Voor nieuwe kinderen die willen kennismaken.</td>
+        </tr>
+        <tr>
+          <td>Flex</td>
+          <td>10 trainingen</td>
+          <td>€65</td>
+          <td>Meest gekozen. Flexibel inzetbaar over een langere periode.</td>
+        </tr>
+        <tr>
+          <td>Fanatiek</td>
+          <td>20 trainingen</td>
+          <td>€120</td>
+          <td>Voor kinderen die wekelijks willen trainen en blijven groeien.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <div class="watermerk">
+    <img src="logo.png" alt="NextGen Talent Lab logo">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 NextGen Talent Lab</p>
+  </footer>
+</body>
+</html>
