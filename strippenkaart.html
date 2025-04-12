@@ -78,6 +78,19 @@
       background-color: #FFD100;
       color: #002147;
     }
+    .koop-knop {
+      display: inline-block;
+      background-color: #FFD100;
+      color: #002147;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .koop-knop:hover {
+      background-color: #e6bc00;
+    }
     .watermerk {
       position: fixed;
       bottom: 10px;
@@ -128,6 +141,7 @@
           <th>Aantal strippen</th>
           <th>Prijs</th>
           <th>Omschrijving</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -136,18 +150,21 @@
           <td>5 trainingen</td>
           <td>€35</td>
           <td>Voor nieuwe kinderen die willen kennismaken.</td>
+          <td><a href="aanmelden.html?kaart=starter" class="koop-knop">Koop nu</a></td>
         </tr>
         <tr>
           <td>Flex</td>
           <td>10 trainingen</td>
           <td>€65</td>
           <td>Meest gekozen. Flexibel inzetbaar over een langere periode.</td>
+          <td><a href="aanmelden.html?kaart=flex" class="koop-knop">Koop nu</a></td>
         </tr>
         <tr>
           <td>Fanatiek</td>
           <td>20 trainingen</td>
           <td>€120</td>
           <td>Voor kinderen die wekelijks willen trainen en blijven groeien.</td>
+          <td><a href="aanmelden.html?kaart=fanatiek" class="koop-knop">Koop nu</a></td>
         </tr>
       </tbody>
     </table>
