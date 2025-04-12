@@ -26,11 +26,53 @@
     </ul>
   </nav>
   <main>
-    <section class="content">
-      <h2>Aanmelden</h2>
-      <p>AANMELDEN_MET_FORMULIER_EN_AUTOMATISCHE_REACTIE</p>
-    </section>
-    <div class="watermerk"></div>
+   <section class="aanmelden">
+  <h2>Aanmelden bij NextGen Talent Lab</h2>
+
+  <p>
+    Wil je kind komen voetballen bij ons? Of ben jij student sport & bewegen en op zoek naar een stageplek waar je écht impact maakt? Meld je dan aan via onderstaand formulier!
+  </p>
+
+  <h3>Voor wie is deze aanmelding bedoeld?</h3>
+  <ul>
+    <li><strong>Spelers:</strong> Kinderen die graag willen trainen bij NextGen Talent Lab</li>
+    <li><strong>Studenten:</strong> Sportbegeleiders in opleiding die graag bij ons stage willen lopen</li>
+  </ul>
+
+  <p>
+    Na ontvangst van je aanmelding nemen we <strong>zo snel mogelijk contact op</strong> met aanvullende informatie. Je ontvangt ook een <strongautomatische bevestiging per e-mail</strong> als teken van je succesvolle aanmelding.
+  </p>
+
+  <p>
+    We kijken ernaar uit je te verwelkomen bij ons team! 💛💙
+  </p>
+
+  <form class="aanmeldformulier" name="aanmelding" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="aanmelding" />
+    
+    <label>Naam</label>
+    <input type="text" name="naam" required />
+
+    <label>E-mailadres</label>
+    <input type="email" name="email" required />
+
+    <label>Telefoonnummer</label>
+    <input type="tel" name="telefoonnummer" />
+
+    <label>Ik meld me aan als:</label>
+    <select name="rol" required>
+      <option value="">-- Maak een keuze --</option>
+      <option value="speler">Speler (kind)</option>
+      <option value="student">Student / begeleider</option>
+    </select>
+
+    <label>Eventuele opmerkingen</label>
+    <textarea name="opmerkingen" rows="5"></textarea>
+
+    <button type="submit">Verzenden</button>
+  </form>
+</section>
+
   </main>
   <footer>
     <p>&copy; 2025 NextGen Talent Lab</p>
