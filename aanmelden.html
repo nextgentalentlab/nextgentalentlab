@@ -47,30 +47,29 @@
     We kijken ernaar uit je te verwelkomen bij ons team! 💛💙
   </p>
 
-  <form class="aanmeldformulier" name="aanmelding" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="aanmelding" />
-    
-    <label>Naam</label>
-    <input type="text" name="naam" required />
+  <form class="aanmeldformulier">
+  <label for="naam">Naam</label>
+  <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required />
 
-    <label>E-mailadres</label>
-    <input type="email" name="email" required />
+  <label for="email">E-mailadres</label>
+  <input type="email" id="email" name="email" placeholder="bijv. naam@email.com" required />
 
-    <label>Telefoonnummer</label>
-    <input type="tel" name="telefoonnummer" />
+  <label for="telefoon">Telefoonnummer</label>
+  <input type="tel" id="telefoon" name="telefoon" placeholder="06-..." required />
 
-    <label>Ik meld me aan als:</label>
-    <select name="rol" required>
-      <option value="">-- Maak een keuze --</option>
-      <option value="speler">Speler (kind)</option>
-      <option value="student">Student / begeleider</option>
-    </select>
+  <label for="rol">Ik meld me aan als:</label>
+  <select name="rol" id="rol" required>
+    <option value="">-- Kies je rol --</option>
+    <option value="speler">Speler</option>
+    <option value="student">Student-begeleider</option>
+  </select>
 
-    <label>Eventuele opmerkingen</label>
-    <textarea name="opmerkingen" rows="5"></textarea>
+  <label for="bericht">Eventuele opmerkingen</label>
+  <textarea name="bericht" id="bericht" rows="4" placeholder="Bijv. ervaring, beschikbaarheid, vragen..."></textarea>
 
-    <button type="submit">Verzenden</button>
-  </form>
+  <button type="submit">Versturen</button>
+</form>
+
 </section>
 
   </main>
