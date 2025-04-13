@@ -7,27 +7,16 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      margin: 0;
       background-color: #ffffff;
       color: #002147;
     }
     header {
       background-color: #002147;
       color: #fff;
-      padding: 2rem 1rem 1rem 1rem;
       text-align: center;
-    }
-    .logo-centered {
-      display: block;
-      margin: 0 auto 1rem auto;
-      width: 100px;
-    }
-    .quote {
-      font-style: italic;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #FFD100;
+      padding: 2rem 1rem 1rem;
     }
     nav {
       background-color: #FFD100;
@@ -37,80 +26,72 @@
       list-style: none;
       display: flex;
       justify-content: center;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
     nav li {
       margin: 0 1rem;
     }
     nav a {
       text-decoration: none;
-      color: #002147;
       font-weight: bold;
+      color: #002147;
     }
     main {
-      padding: 2rem;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    h2 {
+    h2, h3 {
       text-align: center;
     }
-    .sponsor-content {
+    .sponsor-info {
       font-size: 1rem;
       line-height: 1.6;
       text-align: justify;
     }
-    .highlight {
-      background-color: #FFD100;
-      color: #002147;
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: bold;
+    .donatie-formulier {
       text-align: center;
-      margin: 2rem 0;
+      margin: 2rem auto;
     }
-    .cta-button {
-      display: inline-block;
-      background-color: #FFD100;
-      color: #002147;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-      margin-top: 1rem;
-    }
-    .cta-button:hover {
-      background-color: #e6bc00;
-    }
-    .watermerk {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      opacity: 0.07;
-      z-index: 0;
-    }
-    .watermerk img {
+    .donatie-formulier input[type="number"] {
+      padding: 0.5rem;
       width: 100px;
-      height: auto;
+      margin-right: 1rem;
     }
-    footer {
-      background-color: #002147;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
+    .donatie-formulier button {
+      padding: 0.5rem 1rem;
+      background-color: #FFD100;
+      color: #002147;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .banner {
+      background-color: #FFD100;
+      padding: 0.5rem;
+      color: #002147;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .banner span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="NextGen Talent Lab logo" class="logo-centered">
     <h1>NextGen Talent Lab</h1>
-    <p class="quote">"We geloven dat elk kind zijn kans zal grijpen, wanneer de kans wordt aangeboden"</p>
+    <p>"We geloven dat elk kind zijn kans zal grijpen, wanneer de kans wordt aangeboden"</p>
   </header>
-
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -121,42 +102,25 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
   <main>
-    <h2>Word sponsor van beweging en talent</h2>
-    <div class="sponsor-content">
-      <p>NextGen Talent Lab gelooft dat elk kind recht heeft op beweging, plezier en ontwikkeling. Helaas is sporten voor veel kinderen niet vanzelfsprekend. Door wachtrijen bij clubs, financiële drempels of gebrek aan begeleiding blijven veel jonge talenten onbereikt.</p>
-
-      <p>Wij bieden een oplossing: met een flexibel en laagdrempelig trainingsmodel creëren we directe plekken voor kinderen om te bewegen, groeien en zich thuis te voelen in de sport. We doen dit met hart voor het kind én met oog voor de maatschappij.</p>
-
-      <p><strong>Daarom zoeken we betrokken sponsoren, gemeenten en donateurs die dit mogelijk willen maken.</strong></p>
-
-      <div class="highlight">
-        Jouw steun zorgt ervoor dat een kind kan sporten, ontwikkelen en meedoen — ongeacht financiële situatie.
-      </div>
-
-      <p>Als sponsor draag je bij aan:</p>
-      <ul>
-        <li>Toegang tot trainingen voor kinderen op de wachtlijst</li>
-        <li>Een veilige en positieve sportomgeving</li>
-        <li>Praktijkervaring voor sportstudenten</li>
-        <li>Sociale gelijkheid in sportkansen</li>
-      </ul>
-
-      <p>We staan open voor partnerships met bedrijven, fondsen en overheden. Elke bijdrage — groot of klein — maakt impact. Transparantie, dankbaarheid en zichtbaarheid zijn vanzelfsprekend onderdeel van onze samenwerking.</p>
-
-      <p style="text-align:center">
-        <a href="contact.html" class="cta-button">Neem contact met ons op</a>
-      </p>
+    <h2>Steun ons initiatief</h2>
+    <div class="sponsor-info">
+      <p>NextGen Talent Lab zet zich in voor kinderen die op de wachtlijst staan bij sportverenigingen. Met uw bijdrage helpt u ons om zaalhuur, materialen en begeleiding mogelijk te maken. Elk bedrag helpt!</p>
+    </div>
+    <div class="donatie-formulier">
+      <h3>Doneren via iDEAL</h3>
+      <form action="https://www.ing.nl/payreq/m/?trxid=3dSmecfQVbS3zv8BeqET8RPv4kNvjABJ" method="get" target="_blank">
+        <label for="bedrag">Kies uw bedrag (€):</label>
+        <input type="number" id="bedrag" name="bedrag" min="5" step="5" required>
+        <button type="submit">Doneer</button>
+      </form>
+    </div>
+    <div class="sponsor-info">
+      <p>Wilt u als bedrijf structureel bijdragen of vermeld worden als sponsor? Neem dan contact met ons op via de <a href="contact.html">contactpagina</a>.</p>
+    </div>
+    <div class="banner">
+      <span>Met dank aan: Jaylys Klusbedrijf • Maxblisses • Stichting Y • Donateur Z • Uw naam hier? Steun ons vandaag nog! •</span>
     </div>
   </main>
-
-  <div class="watermerk">
-    <img src="logo.png" alt="NextGen Talent Lab logo">
-  </div>
-
-  <footer>
-    <p>&copy; 2025 NextGen Talent Lab</p>
-  </footer>
 </body>
 </html>
