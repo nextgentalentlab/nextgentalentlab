@@ -3,131 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGen Talent Lab - Aanmelden</title>
+  <title>Aanmelden Training - NextGen Talent Lab</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
       color: #002147;
+      margin: 0;
     }
-
     header {
       background-color: #002147;
       color: #fff;
-      padding: 2rem 1rem 1rem 1rem;
       text-align: center;
+      padding: 2rem 1rem 1rem;
     }
-
-    .logo-centered {
-      display: block;
-      margin: 0 auto 1rem auto;
-      width: 100px;
+    nav {
+      background-color: #FFD100;
+      padding: 0.5rem 0;
     }
-
-    .quote {
-      font-style: italic;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #FFD100;
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
     }
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="over-ons.html">Over ons</a></li>
-    <li><a href="strippenkaart.html">Strippenkaart</a></li>
-    <li><a href="aanmelden.html">Aanmelden</a></li>
-    <li><a href="sponsoren.html">Sponsoren</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-
+    nav li {
+      margin: 0 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #002147;
+    }
     main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-
-    h2 {
+    h1 {
       text-align: center;
       color: #002147;
     }
-
-    .aanmelden p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      font-size: 1rem;
+    form label {
+      display: block;
+      margin-top: 1rem;
     }
-
-    .aanmeldformulier {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      margin: 0 auto;
-      gap: 1rem;
-    }
-
-    .aanmeldformulier label {
-      font-weight: bold;
-      margin-bottom: 0.25rem;
-    }
-
-    .aanmeldformulier input,
-    .aanmeldformulier select,
-    .aanmeldformulier textarea {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
+    form input, form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
       border-radius: 6px;
+      border: 1px solid #ccc;
     }
-
-    .aanmeldformulier button {
+    form button {
+      margin-top: 1.5rem;
+      width: 100%;
       background-color: #FFD100;
       color: #002147;
-      font-weight: bold;
       border: none;
       padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 8px;
+      font-weight: bold;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-
-    .aanmeldformulier button:hover {
-      background-color: #e6bc00;
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
     }
-
     .watermerk {
       position: fixed;
       bottom: 10px;
       right: 10px;
-      opacity: 0.07;
-      z-index: 0;
+      opacity: 0.05;
+      z-index: -1;
     }
-
     .watermerk img {
       width: 100px;
-      height: auto;
-    }
-
-    footer {
-      background-color: #002147;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="NextGen Talent Lab logo" class="logo-centered">
     <h1>NextGen Talent Lab</h1>
-    <p class="quote">"We geloven dat elk kind zijn kans zal grijpen, wanneer de kans wordt aangeboden"</p>
+    <p>"We geloven dat elk kind zijn kans zal grijpen, wanneer de kans wordt aangeboden"</p>
   </header>
-
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -138,50 +105,35 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
   <main>
-   Aanmelden bij NextGen Talent Lab
-Wil je kind komen voetballen bij ons?
-    Of ben jij student sport & bewegen en op zoek naar een stageplek waar je écht impact maakt? 
-    
-    Meld je dan aan via onderstaand formulier!
+    <h1>Aanmelden voor training</h1>
+    <form action="https://formsubmit.co/aanmeldingen@nextgentalentlab.nl" method="POST">
+      <label for="naam">Naam van het kind:</label>
+      <input type="text" id="naam" name="Naam" required />
 
-Voor wie is deze aanmelding bedoeld?
-    
-Spelers: Kinderen die graag willen trainen bij NextGen Talent Lab
-    
-Studenten: Sportbegeleiders in opleiding die graag bij ons stage willen lopen
-    
-Na ontvangst van je aanmelding nemen we zo snel mogelijk contact op met aanvullende informatie. Je ontvangt ook een als teken van je succesvolle aanmelding.
+      <label for="leeftijd">Leeftijd:</label>
+      <input type="number" id="leeftijd" name="Leeftijd" min="4" max="18" required />
 
-We kijken ernaar uit je te verwelkomen bij ons team! 💛💙
-    
-      <h2>Aanmelden bij NextGen Talent Lab</h2>
-    
-      <p>Vul onderstaand formulier in om je aan te melden als speler of student-begeleider. Wij nemen zo snel mogelijk contact met je op!</p>
-      <form class="aanmeldformulier">
-        <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required />
+      <label for="email">E-mailadres ouder/verzorger:</label>
+      <input type="email" id="email" name="Email" required />
 
-        <label for="email">E-mailadres</label>
-        <input type="email" id="email" name="email" placeholder="bijv. naam@email.com" required />
+      <label for="strippenkaart">Welke strippenkaart wil je gebruiken?</label>
+      <select id="strippenkaart" name="Strippenkaart">
+        <option value="Starter (5x)">Starter (5x)</option>
+        <option value="Flex (10x)">Flex (10x)</option>
+        <option value="Fanatiek (20x)">Fanatiek (20x)</option>
+      </select>
 
-        <label for="telefoon">Telefoonnummer</label>
-        <input type="tel" id="telefoon" name="telefoon" placeholder="06-..." required />
+      <label>
+        <input type="checkbox" name="Akkoord" required />
+        Ik ga akkoord met de verwerking van deze gegevens ten behoeve van deelname.
+      </label>
 
-        <label for="rol">Ik meld me aan als:</label>
-        <select name="rol" id="rol" required>
-          <option value="">-- Kies je rol --</option>
-          <option value="speler">Speler</option>
-          <option value="student">Student-begeleider</option>
-        </select>
+      <input type="hidden" name="_next" value="https://nextgentalentlab.nl/bedankt.html">
+      <input type="hidden" name="_captcha" value="false">
 
-        <label for="bericht">Eventuele opmerkingen</label>
-        <textarea name="bericht" id="bericht" rows="4" placeholder="Bijv. ervaring, beschikbaarheid, vragen..."></textarea>
-
-        <button type="submit">Versturen</button>
-      </form>
-    </section>
+      <button type="submit">Verzenden</button>
+    </form>
   </main>
 
   <div class="watermerk">
