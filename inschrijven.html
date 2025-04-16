@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inschrijven - NextGen Talent Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #002147;
+    }
+    header {
+      background-color: #002147;
+      color: #fff;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #FFD100;
+      padding: 0.5rem 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin: 0 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #002147;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background-color: #FFD100;
+      color: #002147;
+      border: none;
+      padding: 0.75rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .watermerk {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      opacity: 0.05;
+      z-index: -1;
+    }
+    .watermerk img {
+      width: 100px;
+    }
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inschrijven bij NextGen Talent Lab</h1>
+    <p>Ontdek jouw talent. Beweeg. Groei. Geniet.</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="strippenkaart.html">Strippenkaart</a></li>
+      <li><a href="inschrijven.html">Inschrijven</a></li>
+      <li><a href="sponsoren.html">Sponsoren</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Spelers & Studenten kunnen zich hier aanmelden</h2>
+    <p style="text-align:center; max-width: 700px; margin: 0 auto 2rem;">
+      Ouders kunnen hun kind inschrijven voor een training (max. 24 kinderen per leeftijdsblok). Studenten die willen begeleiden, kunnen zich hieronder ook aanmelden voor een stageplek.
+    </p>
+
+    <form action="https://formsubmit.co/aanmeldingen@nextgentalentlab.nl" method="POST">
+      <label for="naam">Naam van deelnemer:</label>
+      <input type="text" id="naam" name="Naam" required />
+
+      <label for="leeftijd">Leeftijd:</label>
+      <input type="number" id="leeftijd" name="Leeftijd" min="6" max="18" required />
+
+      <label for="email">E-mailadres ouder/verzorger of student:</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="rol">Ik schrijf mij in als:</label>
+      <select id="rol" name="Rol">
+        <option value="Speler">Speler (6 t/m 12 jaar)</option>
+        <option value="Student">Student/begeleider</option>
+      </select>
+
+      <label for="datum">Voorkeursdatum training:</label>
+      <input type="date" id="datum" name="Datum" required />
+
+      <label for="strippenkaart">Strippenkaart (voor spelers):</label>
+      <select id="strippenkaart" name="Strippenkaart">
+        <option value="Starter (5x)">Starter (5x)</option>
+        <option value="Flex (10x)">Flex (10x)</option>
+        <option value="Fanatiek (20x)">Fanatiek (20x)</option>
+        <option value="Student">Niet van toepassing (student)</option>
+      </select>
+
+      <label>
+        <input type="checkbox" name="Akkoord" required /> Ik ga akkoord met de verwerking van mijn gegevens.
+      </label>
+
+      <input type="hidden" name="_next" value="https://nextgentalentlab.nl/bevestigd.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Inschrijving verzenden</button>
+    </form>
+  </main>
+  <div class="watermerk">
+    <img src="logo.png" alt="NextGen Talent Lab logo">
+  </div>
+  <footer>
+    <p>&copy; 2025 NextGen Talent Lab</p>
+  </footer>
+</body>
+</html>
