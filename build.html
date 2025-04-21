@@ -18,6 +18,22 @@
       text-align: center;
       border-bottom: 4px solid #007b8a;
     }
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.5rem 1rem;
+      text-align: right;
+    }
+    nav a {
+      font-size: 0.95rem;
+      color: #007b8a;
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.3s;
+    }
+    nav a:hover {
+      opacity: 1;
+    }
     .logo-inline {
       display: flex;
       justify-content: center;
@@ -54,6 +70,10 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html" title="Terug naar homepage">Home</a> |
+    <a href="build.html" title="Ontdek Build">Build (voor nieuwsgierigen)</a>
+  </nav>
   <header>
     <div class="logo-inline">
       <img src="logo-nextgen-build.png" alt="NextGen Talent Lab – Build logo" />
